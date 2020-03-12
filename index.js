@@ -24,6 +24,5 @@ const LED_PIN = 2;
 board.on('ready', () => {
   console.log("Conectado!");
   const led = new five.Led(LED_PIN);
-  led.on();
-  led.brightness(255);
+  led.fade(255, 5000);
 });
