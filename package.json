@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "dependencies": {
+    "etherport-client": "^0.1.4",
+    "johnny-five": "^1.4.0",
+    "nodemon": "^2.0.2"
+  }
+}

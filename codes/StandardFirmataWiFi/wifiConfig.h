@@ -121,7 +121,7 @@
 
 // STEP 3 [REQUIRED for all boards and shields]
 // replace this with your wireless network SSID
-char ssid[] = "2.4 NET VIRTUA 367";
+char ssid[] = "CYBER-PET";
 
 
 // STEP 4 [OPTIONAL for all boards and shields]
@@ -153,7 +153,7 @@ char ssid[] = "2.4 NET VIRTUA 367";
 #define WIFI_WPA_SECURITY
 
 #ifdef WIFI_WPA_SECURITY
-char wpa_passphrase[] = "3656616870";
+char wpa_passphrase[] = "pet-cyber";
 #endif  //WIFI_WPA_SECURITY
 
 

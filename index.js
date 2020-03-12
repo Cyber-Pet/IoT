@@ -1,3 +1,4 @@
+
 // Para usar o módulo no seu aplicativo, use a função require para chamá-lo a partir de qualquer arquivo JavaScript que tenha baixado as dependências
 const five = require('johnny-five');
 const {
@@ -6,9 +7,9 @@ const {
 
 // Reúne as informações de porta em portInfo
 var portInfo = new EtherPortClient({
-    host: '192.168.137.35',
-    port: 3030
-  });
+  host: '192.168.137.69',
+  port: 3030
+});
 
 // Cria objeto de placa com as informações de porta obtidas pelo IP e porta do dispositivo
 const board = new five.Board({
@@ -23,6 +24,6 @@ const LED_PIN = 2;
 board.on('ready', () => {
   console.log("Conectado!");
   const led = new five.Led(LED_PIN);
-  
-  led.blink(200);
+  led.on();
+  led.brightness(255);
 });
