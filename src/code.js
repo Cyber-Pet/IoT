@@ -1,14 +1,14 @@
-// Conectar no Wifi
 const wifi = require("Wifi");
-wifi.connect("my-ssid", {password:"my-pwd"}, function(err){
-  console.log("connected? err=", err, "info=", wifi.getIP());
-});
-wifi.stopAP();
 
-// Criar ponto de acesso
-// var wifi = require("Wifi");
-// wifi.disconnect();
-// wifi.startAP("my-ssid", {password:"my-password",authMode:"wpa_wpa2"});
+const wifiApToConnect = "CYBER-PET";
+const wifiAp = "AAAA";
+const wifiOption = { password: "pet-cyber", authMode:"wpa_wpa2" };
+
+
+
+
+
+
 
 
 // Fazer Requisisão para API
@@ -27,5 +27,7 @@ function onInit() {
    on = on === 0 ? 1 : 0;
    digitalWrite(pin, on);
  }, 100);
+ wifi.connect(wifiApToConnect,{password: "pet-cyber"});
+ wifi.startAP(wifiAp, wifiOption);
 }
 save();
