@@ -15,17 +15,14 @@ function onInit() {
   // Conectar rede e habilitar hotspot
   wifi.connect(wifiApToConnect,{password: "pet-cyber"});
   wifi.startAP(wifiAp, wifiOption);
+}
 
- // Deixar o led ligado all time
-  /*const pin = 2;
-  let on = 0;
-  digitalWrite(pin, on);
-*/}
-
+  // Led liga quando o ESP conecta na rede wi-fi
   wifi.on('connected',() => {
     digitalWrite(2, 0);
   });
 
+  // Led desliga quando o ESP conecta na rede wi-fi
   wifi.on('disconnected',() => {
     digitalWrite(2, 1);
   });
