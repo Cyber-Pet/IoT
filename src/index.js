@@ -24,12 +24,12 @@ function onInit() {
 // O led liga quando o ESP conecta na rede wi-fi
 wifi.on('connected',() => {
   http.get("https://ghmeyer0.free.beeceptor.com", () => {
-  console.log("Conectado na rede " + wifiApToConnect + "!");
-  wifi.getIP((err, data) => console.log("IP address: " + data.ip)); 
-  // Liga led
-  digitalWrite(2, 0);
-  // Move servo
-  servo.move(0);
+    console.log("Conectado na rede " + wifiApToConnect + "!");
+    wifi.getIP((err, data) => console.log("IP address: " + data.ip)); 
+    // Liga led
+    digitalWrite(2, 0);
+    // Move servo
+    servo.move(0);
   });
 });
 
