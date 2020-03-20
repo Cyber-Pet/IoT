@@ -6,7 +6,7 @@ const wifiApToConnect = "CYBER-PET";
 const wifiOption = {password: "pet-cyber", authMode:"wpa_wpa2"};
 const wifiAp = "ESP8266";
 
-// Fazer Requisisão para API
+// Fazer requisisão para API
 // var http = require("http"a);
 // http.get("http://www.espruino.com", function(res) {
 //   res.on('data', function(data) {
@@ -14,18 +14,24 @@ const wifiAp = "ESP8266";
 //   });
 // });
 
+// Faz um scan das redes disponíveis e imprime no terminal
+// wifi.scan(function(scan) {
+//   console.log(scan)
+// });
+
 function onInit() {
-  // Conectar na rede e habilitar hotspot ao iniciar
+  // Conectar na rede, habilita hotspot e imprime o endereço de IP ao iniciar
   wifi.connect(wifiApToConnect,{password: "pet-cyber"});
   wifi.startAP(wifiAp, wifiOption);
-  wifi.getIP((err, data) => console.log("IP address: " + data.ip));
+  console.log("IP address: " + wifi.getIP().ip);
 }
 
-// O led liga quando o ESP conecta na rede wi-fi
+// Led liga quando o ESP conecta na rede wi-fi
 wifi.on('connected',() => {
   http.get("https://ghmeyer0.free.beeceptor.com", () => {
+    // Imprime no terminal em qual rede está conectado e o endereço de IP
     console.log("Conectado na rede " + wifiApToConnect + "!");
-    wifi.getIP((err, data) => console.log("IP address: " + data.ip)); 
+    console.log("IP address: " + wifi.getIP().ip);
     // Liga led
     digitalWrite(2, 0);
     // Move servo

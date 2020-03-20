@@ -1,7 +1,7 @@
 const wifi = require("Wifi");
 const http = require("http");
 
-var C = {
+export default C={
     handleRequest: (req,res)=>{
       if (req.method=="POST") {
         req.on("close", function(){
@@ -115,4 +115,3 @@ var C = {
       setWatch(C.start_setup, C.pin, { repeat: true, edge: 'falling', debounce: 50 });
     }
   }
-  module.exports C
