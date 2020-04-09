@@ -49,4 +49,6 @@ wifi.on('disconnected',() => {
 
 //SERVO rules
 
+servo.move(0.7,3000); // move to position 0 over 3 seconds
+
 save();
