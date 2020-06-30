@@ -58,3 +58,10 @@ Gustavo Reinert
 Jaderson Silva
 Renato Rezende
 ```
+
+
+https://michael-kuehnel.de/iot/2019/07/16/how-to-flash-esp8266-and-esp32-to-use-espruino-firmware-on-mac-os.html
+
+esptool.py --port COM3 erase_flash 
+
+esptool.py --port COM3 --baud 9600 write_flash --flash_mode qio 0x0000 boot_v1.6.bin 0x1000 espruino_esp8266_user1.bin 0x3FC000 esp_init_data_default.bin 0x3FE000 blank.bin
